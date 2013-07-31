@@ -1,7 +1,7 @@
 Rails4DeviceCancan::Application.routes.draw do
   
   devise_for :users, :controllers => { :registrations => "registrations" }
-  resources  :users 
+  resources  :users, only: [:show, :index, :destroy] 
   root to: 'static_pages#home'
   match '/signup',  to: 'devise/registrations#new', via: 'get'
   match '/help',    to: 'static_pages#help',        via: 'get'

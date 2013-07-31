@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  rolify
   before_save { self.email = email.downcase }
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
