@@ -9,4 +9,9 @@ FactoryGirl.define do
       after(:create) { |user| user.add_role(:admin) }
     end  
   end
+
+  factory :micropost do
+    content "Lorem ipsum"
+    user
+  end  
 end  
